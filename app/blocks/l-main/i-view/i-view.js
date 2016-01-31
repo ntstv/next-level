@@ -17,6 +17,5 @@ export default class View {
     }
 
     renderTemplate(params) {
-      return <div></div>;
     };
 }

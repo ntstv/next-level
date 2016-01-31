@@ -10,8 +10,9 @@ export default class MainView extends View {
     renderTemplate(params) {
       return (
         <div className={Styles['l-main']}>
-          Main
-          <Button />
+          <Button caption="Der Knop" onClick={this.onButtonClick}/>
+          <Button caption="Кнопка" onClick={this.onButtonClick}/>
+          <Button caption="Bouton" onClick={this.onButtonClick}/>
         </div>
       );
     }

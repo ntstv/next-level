@@ -6,11 +6,11 @@ export default class ButtonView extends View {
   /**
   * @param {
   *  caption: string
-  } params
+  * } params
   */
   renderTemplate(params) {
     return (
-      <div className={Styles['b-button']}>
+      <div className={Styles['b-button']} ref='root'>
         {params.caption}
       </div>
     );
