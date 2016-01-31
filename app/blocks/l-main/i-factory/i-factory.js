@@ -1,4 +1,4 @@
-import ButtonView from '../b-button/view.jsx';
+import ButtonTemplate from '../b-button/b-button.jsx';
 
 export const Type = {
   BUTTON: 'button'
@@ -15,11 +15,11 @@ export default class Factory {
     return instance_;
   }
 
-  createView(type, params) {
+  getTemplate(type) {
     let res;
     switch(type) {
       case Type.BUTTON:
-          res = new ButtonView(params);
+          res = ButtonTemplate.getInstance();
           break;
     }
     return res;

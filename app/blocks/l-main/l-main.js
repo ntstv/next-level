@@ -1,5 +1,5 @@
 import Component from './i-component/i-component.js';
-import View from './view.jsx';
+import Template from './l-main.jsx';
 
 /**
 * Main class
@@ -9,11 +9,11 @@ import View from './view.jsx';
 export default class Main extends Component {
 
   render() {
-    let view = new View();
-    return view.render(this);
+    let template = Template.getInstance();
+    return template.render(this);
   }
 
   onButtonClick(event) {
-    console.log(event, 'button clicked');
+    //todo
   }
 }

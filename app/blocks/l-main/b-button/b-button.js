@@ -2,18 +2,23 @@ import Component from '../i-component/i-component.js';
 import Factory, {Type} from '../i-factory/i-factory.js';
 
 export default class Button extends Component {
+
   render() {
-      let view = Factory.getInstance().createView(Type.BUTTON, {
+      return this.props.template.render(this, {
         caption: this.props.caption
       });
-      return view.render();
-  }
-
-  onClick(event) {
-    this.props.onClick(event);
   }
 
   componentDidMount() {
-    this.refs.root.addEventListener('click', this.onClick.bind(this));
+    this.refs.root.addEventListener('click', this.onClick_.bind(this));
   }
+
+  onClick_(event) {
+    this.props.onClick(event);
+  }
+}
+
+Button.defaultProps = {
+    template: Factory.getInstance().getTemplate(Type.BUTTON),
+    onClick: function() {}
 }
